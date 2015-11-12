@@ -111,7 +111,6 @@ module.exports = function (grunt) {
             editor: {
                 path: './',
                 app: 'Sublime Text 2'
-                app: ''
             },
         },
 
