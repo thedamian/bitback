@@ -1,5 +1,77 @@
-<div class="container">
+<script>
+$.ui.ready (function ( ) {
+            $.ui.backButtonText ="Back". / / We override the back button text to always say" Back"
+} ) ;
+       
+        if (! ( (window.DocumentTouch && document instanceof  DocumentTouch ) |  | ' ontouchstart ' in window )) {
+            var script = document.createElement (" script");
+            script.src =" plugins/af.desktopBrowsers.js" ;
+            var tag = $ (" head" ). append ( script) ;
+            $.os.android = true;. / / let 's make it run like an android device
+            $.os.desktop = true. ;
+        }
+  
+  
+  function Rssparse ()
+{
+$. ajax ( {
+url : ' ? server.php url =' + $ ("# link" ) val ( ).
+success : function ( data) {
+var xmld = $.parseXML (data) ;
+var nodes =xmld.getElementsByTagName ("item" ) ;
+$("# flux" ).empty ();
+ 
+for (i + + var i = 0 ; i < nodes.length )
+{
+var  titles= nodes[ i ].getElementsByTagName ("title" );
+var dom = $ ("# flux" ).append (" <li> <a href=' ' >" + titles [0] childNodes [0]. nodeValue +"< / li >"...) ;
+}
+}
+error: function () {alert ("fail");}
+} ) ;
+}
+  
+ </script>
 
-    <h1>Your Node Express App</h1>
-
-</div>
+<div id="afui">
+  <div title="Project" class="panel" id="test">
+<nav>
+             <div class='title'> Business </div>
+<ul>
+             <li class="BusinessHome">
+                     <a href="#rss"> Home </a>
+             </li>
+              <li >
+                   <a href="#test"> test </a>
+             </li>
+</ul>
+</nav >
+  
+  
+       <div id="content">
+           <div title='RSS' class="panel" id="rss" style ="overflow: hidden" >
+  
+             
+             
+  <fieldset>
+    <legend> RSS 2.0  
+        <form id="parser" onsubmit="return false">
+          <label for="links"> Enter  rss 2.0 url  <br />
+          <input type="text"id="links" name="links" class='jq-ui-forms'/>
+            <input type="submit" class="button" value="Submit" onclick=" Rssparse ()"/>
+     </ form>
+  </ fieldset>
+      
+      <fieldset>
+        <legend> Rss Feed 
+            <ul id="flux">
+            </ul>
+        </legend>
+     </ fieldset>
+             
+             </ div>
+       </ div>
+      </ div>
+  
+    
+    </div>  
