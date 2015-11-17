@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = function (grunt) {
     // show elapsed time at the end
     require('time-grunt')(grunt);
@@ -102,17 +100,6 @@ module.exports = function (grunt) {
             }
         },
 
-        // Open Config
-        open: {
-            site: {
-                path: 'http://localhost:3000',
-                app: 'Google Chrome'
-            },
-            editor: {
-                path: './',
-                app: 'Sublime Text 2'
-            },
-        },
 
         // Rev Config
         rev: {
@@ -276,9 +263,6 @@ module.exports = function (grunt) {
         'concurrent:dist',
         'useminPrepare',
         'imagemin',
-        'concat',
-        'cssmin',
-        'uglify',
         'copy:dist',
         'rev',
         'usemin',
