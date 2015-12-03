@@ -1,0 +1,102 @@
+    <script>    
+        function onDeviceReady(){ 
+            $.ui.launch();
+            intel.xdk.device.hideSplashScreen();
+        }
+        document.addEventListener("intel.xdk.device.ready", onDeviceReady, false);
+    </script>
+   <style>
+        #popupBasic {
+            width: 300px !important;
+            height: 300px !important;
+        }
+    </style>
+
+
+
+    <script>
+        $(document).bind("mobileinit", function () {
+            $.mobile.page.prototype.options.domCache = true;
+            $.mobile.allowCrossDomainPages = true;
+               max_height();
+    navigator.geolocation.getCurrentPosition(onSuccess, onError, { 'enableHighAccuracy': true, 'timeout': 20000 });
+
+        });
+    </script>
+
+
+    
+    <script>   
+        $.ui.autoLaunch = false; 
+        $.ui.animateHeaders = false;
+                
+        $(document).ready(function(){
+            $.ui.launch();
+        });
+    </script>    
+ 
+<div id="afui">
+    
+    <div id="content" style=""> 
+        
+    <!--Tab View Pages-->
+        <div class="panel" title="Home" id="page1" data-tab="tab1" selected="true">
+            <header>
+                <h1>Map</h1>
+            </header>
+            <div id="map_canvas" style="width:100%;height:100%"></div>
+        </div>
+        
+        <div class="panel" title="Favorites" id="page2" data-tab="tab2">
+             <header>
+                <h1>Pay</h1>
+            </header>
+            <center>
+           <BR><BR><BR>
+           <p>It's time to Pay this amount of $27.33 (with 10% bitcoin back)<BR>
+              <img src="/images/e7952a1b.BlockChainWallet.png">
+              </p>
+              <a href="bitcoin:175tWpb8K1S7NmH4Zx6rewF9WQrcZv245W?amount=50&label=Luke-Jr&message=Donation%20for%20project%20xyz">Click here to pay with your wallet</a>
+           </center>
+        </div>
+        
+        <div class="panel" title="Messages" id="page3" data-tab="tab3">
+            <header>
+                <h1>Sell</h1>
+            </header>
+            <center>
+           <BR><BR><BR>
+           <p>Pay with your Wallet:<BR>
+              <img src="/images/e7952a1b.BlockChainWallet.png">
+              </p>
+           </center>
+        </div>
+        
+        <div class="panel" title="Profile" id="page4" data-tab="tab4">
+            <header>
+                <h1>Transactions</h1>
+            </header>
+            <ul class="list">
+            <li>$1.35 from frank</li>
+            <li>$1.35 from frank</li>
+            <li>$1.35 from frank</li>
+            <li>$1.35 from frank</li>
+            <li>$1.35 from frank</li>
+            <li>$1.35 from frank</li>
+            <li>$1.35 from frank</li>
+            <li>$1.35 from frank</li>
+            <li>$1.35 from frank</li>
+            </ul>
+        </div>
+        
+    </div>
+    
+    <!--Footer with Tabs or Navigation bar -->
+    <div id="navbar">
+        <a href="#page1" id='tab1' class="icon home" data-transition="none">Map</a>
+        <a href="#page2" id='tab2' class="icon heart" data-transition="none">Pay</a>
+        <a href="#page3" id='tab3' class="icon chat" data-transition="none">Sell</a>
+        <a href="#page4" id='tab4' class="icon user" data-transition="none">Transactions</a>
+    </div>
+
+</div>
